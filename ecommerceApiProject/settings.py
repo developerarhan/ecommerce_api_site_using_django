@@ -82,31 +82,41 @@ WSGI_APPLICATION = 'ecommerceApiProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DB = os.getenv("DB")
-#if we want use our project on production level then DB have value from env and otherwisemif we to use it on 
-# Development level then DB have no value.
-if DB == "True":
-    print("Yes Postgre")
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'railway',
-            'USER': 'postgres',
-            'PASSWORD': os.getenv("PG_PASSWORD"),
-            'HOST': os.getenv("PG_HOST"),
-            'PORT': os.getenv("PG_PORT"),  
-        }
-    }
+# DB = os.getenv("DB")
+# #if we want use our project on production level then DB have value from env and otherwisemif we to use it on 
+# # Development level then DB have no value.
+# if DB == "True":
+#     print("Yes Postgre")
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'railway',
+#             'USER': 'postgres',
+#             'PASSWORD': os.getenv("PG_PASSWORD"),
+#             'HOST': os.getenv("PG_HOST"),
+#             'PORT': os.getenv("PG_PORT"),  
+#         }
+#     }
 
-else:
-    print("Yes Sqlite")
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# else:
+#     print("Yes Sqlite")
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': os.getenv("PG_PASSWORD"),
+        'HOST': os.getenv("PG_HOST"),
+        'PORT': os.getenv("PG_PORT"),  
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
