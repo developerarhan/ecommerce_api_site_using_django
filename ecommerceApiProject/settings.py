@@ -110,8 +110,8 @@ WSGI_APPLICATION = 'ecommerceApiProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
+        'NAME': os.getenv('PG_DATABASE'),
+        'USER': os.getenv('PG_USER'),
         'PASSWORD': os.getenv("PG_PASSWORD"),
         'HOST': os.getenv("PG_HOST"),
         'PORT': os.getenv("PG_PORT"),  
