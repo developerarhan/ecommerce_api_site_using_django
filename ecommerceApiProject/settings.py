@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'ecommerceApiProject.wsgi.application'
 DB = os.getenv("DB")
 #if we want use our project on production level then DB have value from env and otherwisemif we to use it on 
 # Development level then DB have no value.
-if DB in ["True", True]:
+if DB == "True":
     print("Yes Postgre")
     DATABASES = {
         'default': {
