@@ -32,6 +32,7 @@ DEBUG = True
 # ALLOWED_HOSTS = ["3143d6281e5b.ngrok-free.app", "127.0.0.1"]
 # CSRF_TRUSTED_ORIGINS = ["https://3143d6281e5b.ngrok-free.app"]
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://ecommerceapisiteusingdjango-production.up.railway.app"]
 
 
 # Application definition
